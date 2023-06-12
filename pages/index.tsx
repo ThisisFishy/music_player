@@ -12,6 +12,7 @@ type Video = {
     title: string;
     description: string;
   };
+  duration: string;
 };
 
 const HomePage = () => {
@@ -28,20 +29,18 @@ const HomePage = () => {
             key: 'AIzaSyAdjIQ2HYt5YOHxhtItyrrOG_-ZaVelO8g',
           },
         });
-  
+
         const duration = response.data.items[0].contentDetails.duration;
-  
+
         return {
           ...video,
           duration,
         };
       })
     );
-  
+
     setVideos((prevVideos) => [...prevVideos, ...videosWithDuration]);
   };
-  
-  
 
   const handleNext = () => {
     setCurrentIndex(currentIndex + 1);
@@ -63,11 +62,17 @@ const HomePage = () => {
       <h1 className="text-4xl mb-5">Youtube Player</h1>
       <SearchBar onSearch={handleSearch} />
       <div className="mt-5 mb-5">
-        <Player video={videos[currentIndex]}/>
+        <Player video={videos[currentIndex]} onNext={handleNext} /> {/* Pass onNext function */}
       </div>
-      <button className="mr-2 py-2 px-4 bg-blue-500 text-white rounded" onClick={handlePrev}>Prev</button>
-      <button className="mr-2 py-2 px-4 bg-blue-500 text-white rounded" onClick={handleNext}>Next</button>
-      <button className="ml-2 py-2 px-4 bg-red-500 text-white rounded" onClick={handleClear}>Clear</button>
+      <button className="mr-2 py-2 px-4 bg-blue-500 text-white rounded" onClick={handlePrev}>
+        Prev
+      </button>
+      <button className="mr-2 py-2 px-4 bg-blue-500 text-white rounded" onClick={handleNext}>
+        Next
+      </button>
+      <button className="ml-2 py-2 px-4 bg-red-500 text-white rounded" onClick={handleClear}>
+        Clear
+      </button>
       <VideoList videos={videos} />
     </div>
   );
