@@ -1,8 +1,9 @@
 import React, { useState, ChangeEvent, FormEvent } from 'react';
 import axios from 'axios';
+import { Video } from './type';
 
 type Props = {
-  onSearch: (items: any[]) => void;
+  onSearch: (items: Video[]) => void; // Define Video[] instead of any[]
 };
 
 const SearchBar: React.FC<Props> = ({ onSearch }) => {
@@ -15,18 +16,23 @@ const SearchBar: React.FC<Props> = ({ onSearch }) => {
   const onSubmit = async (event: FormEvent) => {
     event.preventDefault();
 
-    const response = await axios.get('https://www.googleapis.com/youtube/v3/search', {
-      params: {
-        q: term,
-        part: 'snippet',
-        maxResults: 1,
-        key: 'AIzaSyAdjIQ2HYt5YOHxhtItyrrOG_-ZaVelO8g',
-        type: 'video'
-      }
-    });
+    try {
+      const response = await axios.get('https://www.googleapis.com/youtube/v3/search', {
+        params: {
+          q: term,
+          part: 'snippet',
+          maxResults: 1,
+          key: process.env.NEXT_PUBLIC_YOUTUBE_API_KEY, // use API key from environment variables
+          type: 'video'
+        }
+      });
 
-    onSearch(response.data.items);
-    setTerm(''); // this line clears the input field after search
+      onSearch(response.data.items);
+      setTerm(''); // this line clears the input field after search
+    } catch (error) {
+      // Handle error accordingly
+      console.error(error);
+    }
   };
 
   return (
