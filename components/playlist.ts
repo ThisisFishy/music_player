@@ -87,11 +87,11 @@ type Video = {
 
       {
         id: {
-          videoId: "1kenSheA9o0"
+          videoId: "KCBGvqrZ9JI"
         },
         snippet: {
-          title: "再不再見",
-          description: "C AllStar Say GoodBye"
+          title: "我也難過的",
+          description: "I am sad too"
         },
       },
       

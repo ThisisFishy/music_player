@@ -3,7 +3,7 @@ import axios from 'axios';
 import { Video } from './type';
 
 type Props = {
-  onSearch: (items: Video[]) => void; // Define Video[] instead of any[]
+  onSearch: (items: Video[]) => void;
 };
 
 const SearchBar: React.FC<Props> = ({ onSearch }) => {
@@ -22,7 +22,7 @@ const SearchBar: React.FC<Props> = ({ onSearch }) => {
           q: term,
           part: 'snippet',
           maxResults: 1,
-          key: process.env.NEXT_PUBLIC_YOUTUBE_API_KEY, // use API key from environment variables
+          key: process.env.NEXT_PUBLIC_YOUTUBE_API_KEY,
           type: 'video'
         }
       });
@@ -30,7 +30,6 @@ const SearchBar: React.FC<Props> = ({ onSearch }) => {
       onSearch(response.data.items);
       setTerm(''); // this line clears the input field after search
     } catch (error) {
-      // Handle error accordingly
       console.error(error);
     }
   };
@@ -39,7 +38,7 @@ const SearchBar: React.FC<Props> = ({ onSearch }) => {
     <div>
         <form onSubmit={onSubmit} className="mt-5">
             <input type="text" value={term} onChange={onInputChange} placeholder="Search..." className="py-2 px-4 border rounded text-black bg-gray-200 mr-2" />
-            <button type="submit" className="py-2 px-4 bg-green-500 text-white rounded">Submit</button>
+            <button type="submit" className="py-2 px-4 bg-green-500 text-white rounded hover:opacity-80">Submit</button>
         </form>
     </div>
   );

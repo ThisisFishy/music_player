@@ -24,12 +24,13 @@ const Player: React.FC<Props> = ({ video, onNext }) => {
   const videoUrl = `https://www.youtube.com/watch?v=${video.id.videoId}`;
 
   const handleEnded = () => {
-    onNext(); // Call onNext function to autoplay the next video
+    onNext();
   };
 
   return (
-    <div>
+    <div className='nowrap overflow-hidden'>
       <ReactPlayer url={videoUrl} playing controls onEnded={handleEnded} />
+      <p className='w-96 text-2xl ml-2 mt-4 overflow-hidden'>{video.snippet.title}</p>
     </div>
   );
 };

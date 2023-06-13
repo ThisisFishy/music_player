@@ -3,7 +3,7 @@ import SearchBar from '../components/SearchBar';
 import Player from '../components/Player';
 import VideoList from '../components/VideoList';
 import axios from 'axios';
-import playlists from '../components/playlist'; // the playlists file
+import playlists from '../components/playlist';
 
 type Video = {
   id: {
@@ -44,7 +44,7 @@ const HomePage = () => {
 
   const handleNext = () => {
     if (currentIndex >= videos.length - 1) {
-      setCurrentIndex(0); // if at end of list, loop back to start
+      setCurrentIndex(0);
     } else {
       setCurrentIndex(currentIndex + 1);
     }
@@ -83,27 +83,27 @@ const HomePage = () => {
   return (
     <div className='flex'>  
       <div className="p-10">
-        <h1 className="text-4xl mb-5">Youtube Player</h1>
-        <div className='flex'>
+        <h1 className="text-4xl mb-5 w-96">Youtube Player</h1>
+        <div className='flex w-max'>
           <SearchBar onSearch={handleSearch} />
-          <button onClick={() => loadPlaylist('fish recommendation')} className='content-end h-10 mx-2 mt-5 py-2 px-4 bg-orange-600 text-white rounded'>
+          <button onClick={() => loadPlaylist('fish recommendation')} className='content-end h-10 mx-2 mt-5 py-2 px-4 bg-zinc-950 text-white rounded hover:opacity-80'>
              fishy's playlist
           </button>
         </div>
-        <div className="mt-5 mb-5">
-          <Player video={videos[currentIndex]} onNext={handleNext} /> {/* Pass onNext function */}
+        <div className="w-auto my-5">
+          <Player video={videos[currentIndex]} onNext={handleNext} />
         </div>
-        <button className="mr-2 py-2 px-4 bg-blue-500 text-white rounded" onClick={handlePrev}>
+        <button className="mr-2 py-2 px-4 bg-blue-500 text-white rounded hover:opacity-80" onClick={handlePrev}>
           Prev
         </button>
-        <button className="mr-2 py-2 px-4 bg-blue-500 text-white rounded" onClick={handleNext}>
+        <button className="mr-2 py-2 px-4 bg-blue-500 text-white rounded hover:opacity-80" onClick={handleNext}>
           Next
         </button>
-        <button className="ml-2 py-2 px-4 bg-red-500 text-white rounded" onClick={handleClear}>
+        <button className="ml-2 py-2 px-4 bg-red-500 text-white rounded hover:opacity-80" onClick={handleClear}>
           Clear
         </button>
       </div>
-      <div className="mt-28 ml-14">
+      <div className="mt-28 ml-20 bg-zinc-950 opacity-95 px-5 rounded-md border-2 shadow-lg shadow-black border-slate-700">
         <VideoList videos={videos} onMoveToTop={handleMoveToTop} />
       </div>
     </div>
