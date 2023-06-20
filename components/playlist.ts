@@ -47,6 +47,16 @@ type Video = {
 
       {
         id: {
+          videoId: "NuiAOSii_sk"
+        },
+        snippet: {
+          title: "想自由",
+          description: "Yoga Freedom"
+        },
+      },
+
+      {
+        id: {
           videoId: "6d0v2InyN_w"
         },
         snippet: {
@@ -77,6 +87,16 @@ type Video = {
 
       {
         id: {
+          videoId: "ftfJRzW0MPo"
+        },
+        snippet: {
+          title: "說謊",
+          description: "Yoga Fairy Tale"
+        },
+      },
+
+      {
+        id: {
           videoId: "1kenSheA9o0"
         },
         snippet: {
@@ -95,8 +115,97 @@ type Video = {
         },
       },
       
+      {
+        id: {
+          videoId: "KKsioz-zaZY"
+        },
+        snippet: {
+          title: "說了再見",
+          description: "Jay Chou Say Goodbye"
+        },
+      },
+
+      {
+        id: {
+          videoId: "m78lJuzftcc"
+        },
+        snippet: {
+          title: "刻在我心底的名字",
+          description: "Your Name Engraved Herein"
+        },
+      },
+
+      {
+        id: {
+          videoId: "xVTI5eSzwzQ"
+        },
+        snippet: {
+          title: "心雨",
+          description: "Jay Chou Heart Rain"
+        },
+      },
+
+      {
+        id: {
+          videoId: "Shxik4JT_hE"
+        },
+        snippet: {
+          title: "Love Song",
+          description: "Khalil fong Love Song"
+        },
+      },
+
+      {
+        id: {
+          videoId: "L229QDxDakU"
+        },
+        snippet: {
+          title: "一路向北",
+          description: "Jay Chou All The Way North"
+        },
+      },
+
+      {
+        id: {
+          videoId: "812mgU1tHs"
+        },
+        snippet: {
+          title: "愛愛愛",
+          description: "Khalil Fong love love love"
+        },
+      },
+
+      {
+        id: {
+          videoId: "v6xC1U3j2G0"
+        },
+        snippet: {
+          title: "我不是神，我只是平凡卻直拗愛著你的人",
+          description: "Yoga Wordless Groans"
+        },
+      },
+
+      {
+        id: {
+          videoId: "_VxLOj3TB5k"
+        },
+        snippet: {
+          title: "不該",
+          description: "Shouldn't be"
+        },
+      },
+
+      {
+        id: {
+          videoId: "Mqr-kjvXsk8"
+        },
+        snippet: {
+          title: "兜圈",
+          description: "Detour"
+        },
+      },
     ],
-    // ... other playlists ... 
+    // ... other playlists ...
   };
   
   export default playlists;
