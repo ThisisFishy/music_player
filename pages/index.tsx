@@ -103,7 +103,7 @@ const HomePage = () => {
           Clear
         </button>
       </div>
-      <div className="mt-28 ml-20 bg-zinc-950 opacity-95 px-5 rounded-md border-2 shadow-lg shadow-black border-slate-700">
+      <div className="h-144 mt-44 ml-20 bg-zinc-950 opacity-95 px-5 rounded-md border-2 shadow-lg shadow-black border-slate-700 overflow-y-auto">
         <VideoList videos={videos} onMoveToTop={handleMoveToTop} />
       </div>
     </div>
