@@ -264,6 +264,26 @@ type Video = {
           description: "Lack of"
         },
       },
+
+      {
+        id: {
+          videoId: "jfKfPfyJRdk"
+        },
+        snippet: {
+          title: "Lofi Girl Live",
+          description: "Lofi Girl Live"
+        },
+      },
+
+      {
+        id: {
+          videoId: "n61ULEU7CO0"
+        },
+        snippet: {
+          title: "Lofi Girl Video",
+          description: "Lofi Girl Video"
+        },
+      },
     ],
     // ... other playlists ...
   };
